@@ -10,7 +10,7 @@ interface TypographyProps {
 
 export default function Typography({ children, isBold, isCentered, variant, style }: TypographyProps) {
     const variableStyles = `${isBold && 'font-bold'} ${isCentered && 'text-center'} ${style}`
-    const commonStyles = 'text-black'
+    const commonStyles = 'text-white'
 
     switch (variant) {
         case 'h1':
