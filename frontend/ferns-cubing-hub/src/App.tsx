@@ -3,6 +3,7 @@ import Typography from "./components/ui/typography"
 import Scrambler from "./helpers/scrambler"
 import { Button } from "@base-ui/react/button";
 
+import "cubing/twisty";
 
 export function App() {
   async function newScramble(){
@@ -18,8 +19,15 @@ export function App() {
 
   return (  
     <div>
-      <Typography variant="h1" isBold>{scrambleString}</Typography>
+      <Typography variant="h1" isBold >{scrambleString}</Typography>
       <Button onClick={newScramble}>Click me to regenerate</Button>
+
+      <twisty-player
+        alg={scrambleString}
+        visualization="2D"
+        control-panel="none"
+        background="none"
+      />
     </div>
   )
 }
