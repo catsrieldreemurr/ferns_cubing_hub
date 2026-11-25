@@ -4,6 +4,7 @@ import Scrambler from "./helpers/scrambler"
 import { Button } from "@base-ui/react/button";
 
 import "cubing/twisty";
+import ContentContainer from "./components/ui/contentContainter";
 
 export function App() {
   async function newScramble(){
@@ -18,20 +19,17 @@ export function App() {
   }, [])
 
   return (  
-    <div className="h-screen bg-linear-to-r from-slate-900 to-gray-700 text-white">
-      <div className="flex justify-center items-center flex-col bg-gray-800 rounded-full p-5">
-        <Typography variant="h1" isBold >{scrambleString}</Typography>
-        <Button onClick={newScramble}>Click me to regenerate</Button>
-      </div>
+    <ContentContainer>
+      <Typography variant="p" size="h2" isBold isCentered>{scrambleString}</Typography>
+      <Button onClick={newScramble}>Click me to regenerate</Button>
       
-
       <twisty-player
         alg={scrambleString}
         visualization="2D"
         control-panel="none"
         background="none"
       />
-    </div>
+    </ContentContainer>
   )
 }
 
