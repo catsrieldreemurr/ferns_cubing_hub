@@ -5,6 +5,7 @@ import { Button } from "@base-ui/react/button";
 
 import "cubing/twisty";
 import ContentContainer from "./components/ui/contentContainter";
+import ScrambleSaveComponent from "./components/ui/saveScramble";
 
 export function App() {
   async function newScramble(){
@@ -29,6 +30,8 @@ export function App() {
         control-panel="none"
         background="none"
       />
+
+      <ScrambleSaveComponent scramble={scrambleString}/>
     </ContentContainer>
   )
 }
