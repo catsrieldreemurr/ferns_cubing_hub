@@ -2,16 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./util/db")
 
+const timerRoute = require("./routes/timer")
+
 const app = express();
 
 app.use(express.json())
 app.use(cors())
 
-app.use("/", (req, res, next ) => {
-  res.json({
-    "test": "hi"
-  })
-})
+app.use("/", timerRoute);
 
 async function createDatabaseConnection(){
   try{
