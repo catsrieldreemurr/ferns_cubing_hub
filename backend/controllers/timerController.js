@@ -8,7 +8,7 @@ exports.SaveSolve = async (req, res, next) => {
   try{
     const solve = await Solve.create({
       scramble: req.body.scramble || 'DNF',
-      solveTimeMs: 30000
+      solveTimeMs: req.body.time || 0
     })
 
     solve.save();

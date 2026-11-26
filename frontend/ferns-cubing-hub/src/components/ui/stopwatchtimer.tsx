@@ -53,7 +53,7 @@ export default function Stopwatch({setTimePassedMs, timePassedMs}:SetProps){
 
   return (
     <div>
-      <Typography size="h1" style="p-5">       
+      <Typography size="h1" style="p-5" isCentered>       
         {minutes.toString().padStart(2, "0")}:
         {seconds.toString().padStart(2, "0")}:
         {miliseconds.toString().padStart(2, "0")}</Typography>

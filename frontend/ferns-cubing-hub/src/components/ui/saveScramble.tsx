@@ -3,10 +3,11 @@ import { Button } from "./button";
 import Typography from "./typography";
 
 interface SetProps{
-  scramble: string  
+  scramble: string
+  time: number
 }
 
-export default function ScrambleSaveComponent({scramble}:SetProps){
+export default function ScrambleSaveComponent({scramble, time}:SetProps){
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorState, setErrorState] = useState({hasFinished: false, hasFailed: false});
@@ -19,7 +20,8 @@ export default function ScrambleSaveComponent({scramble}:SetProps){
         'Content-Type': 'application/json',
       }, 
       body: JSON.stringify({
-        scramble: scramble
+        scramble: scramble,
+        time: time
       })
     })
 

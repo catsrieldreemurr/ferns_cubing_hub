@@ -33,9 +33,7 @@ export function App() {
         background="none"
       />
 
-      <ScrambleSaveComponent scramble={scrambleString}/>
-      <Typography>{timePassedMs}</Typography>
-
+      <ScrambleSaveComponent scramble={scrambleString} time={timePassedMs}/>
       <Stopwatch timePassedMs={timePassedMs} setTimePassedMs={setTimePassedMs}/>
     </ContentContainer>
   )
